@@ -1,149 +1,103 @@
 # 📄 Resume Screening & Candidate Ranking System
 
-An AI-powered Resume Screening & Candidate Ranking System built using **Python, NLP, Scikit-learn, and Streamlit**. The application analyzes uploaded resumes, extracts relevant skills, compares them against a job description, ranks candidates based on similarity scores, and highlights matched and missing skills.
+An AI-powered Resume Screening System built using **Python, Streamlit, and NLP** that automatically compares uploaded resumes against a job description, ranks candidates based on similarity, extracts technical skills, and highlights matched and missing skills.
+
+> **Future Interns – Machine Learning Task 3**
 
 ---
 
 ## 🚀 Live Demo
 
-### 🌐 Streamlit App
+**Streamlit App:**  
 https://resume-screening-system-saktron.streamlit.app/
 
-### 💻 GitHub Repository
+---
+
+## 📂 GitHub Repository
+
 https://github.com/saktronX/FUTURE_ML_03
 
 ---
 
-# 📌 Features
+## 📌 Features
 
-- 📄 Upload one or multiple PDF resumes
-- 💼 Paste a job description
-- 🧹 Resume text preprocessing using NLP
-- 🧠 Automatic skill extraction
-- 📊 Resume ranking using TF-IDF & Cosine Similarity
-- 🎯 Candidate match score calculation
-- ✅ Display matched skills
-- ❌ Highlight missing skills
-- 🌐 Interactive Streamlit web application
+- Upload one or multiple PDF resumes
+- Paste any job description
+- Resume text extraction
+- NLP text preprocessing
+- TF-IDF Vectorization
+- Cosine Similarity based candidate ranking
+- Automatic skill extraction
+- Matched Skills detection
+- Missing Skills detection
+- Resume preview
+- Interactive Streamlit UI
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - Python
 - Streamlit
-- Scikit-learn
 - Pandas
 - NumPy
+- Scikit-learn
 - NLTK
-- PDFPlumber
+- PyMuPDF (fitz)
 
 ---
 
-# 📂 Dataset
+## 📂 Project Structure
 
-This project uses:
-
-- Resume Dataset (Kaggle)
-- Monster.com Job Description Dataset
-
-These datasets were used for resume preprocessing, skill extraction, and candidate ranking.
-
----
-
-# ⚙️ Project Workflow
-
-1. Upload PDF resume(s).
-2. Paste a job description.
-3. Extract text from uploaded resumes.
-4. Clean and preprocess the text.
-5. Extract relevant skills.
-6. Convert text into TF-IDF vectors.
-7. Compute Cosine Similarity scores.
-8. Rank candidates.
-9. Display matched and missing skills.
-
----
-
-# 📁 Project Structure
-
-```text
-FUTURE_ML_03/
+```
+Resume-Screening-System/
 │
 ├── app.py
-├── README.md
 ├── requirements.txt
+├── README.md
 │
 ├── data/
 │   ├── Resume.csv
 │   └── monster_com-job_sample.csv
 │
+├── utils/
+│   ├── preprocessing.py
+│   └── skill_extractor.py
+│
 ├── notebook/
 │   └── Resume_Screening.ipynb
 │
-├── screenshots/
-│   ├── home1.png
-│   ├── upload.png
-│   ├── ranking.png
-│   ├── skills.png
-│   └── skills1.png
-│
-└── utils/
-    ├── pdf_parser.py
-    ├── preprocess.py
-    ├── ranking.py
-    └── skill_extractor.py
+└── screenshots/
+    ├── home1.png
+    ├── upload.png
+    ├── ranking.png
+    ├── skills.png
+    └── skills1.png
 ```
 
 ---
 
-# 📸 Screenshots
+## ⚙️ Installation
 
-## 🏠 Home Page
-
-![Home](screenshots/home1.png)
-
----
-
-## 📄 Resume Upload
-
-![Upload](screenshots/upload.png)
-
----
-
-## 🏆 Candidate Ranking
-
-![Ranking](screenshots/ranking.png)
-
----
-
-## 🧠 Skill Analysis
-
-![Skills](screenshots/skills.png)
-
----
-
-# ⚙️ Installation
-
-### Clone Repository
+Clone the repository
 
 ```bash
 git clone https://github.com/saktronX/FUTURE_ML_03.git
 ```
 
-### Go to Project Folder
+Go inside the project
 
 ```bash
 cd FUTURE_ML_03
 ```
 
-### Install Dependencies
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Streamlit
+Run the application
 
 ```bash
 streamlit run app.py
@@ -151,38 +105,110 @@ streamlit run app.py
 
 ---
 
-# 📊 Results
+## 📸 Screenshots
 
-The application successfully:
+### 🏠 Home Page
 
-- Cleans resume text using NLP.
-- Extracts technical skills automatically.
-- Compares resumes with a job description.
-- Ranks candidates using Cosine Similarity.
-- Identifies matched and missing skills.
-- Provides an easy-to-use web interface.
+![Home](screenshots/home1.png)
 
 ---
 
-# 🔮 Future Improvements
+### 📤 Upload Resume
 
-- DOCX Resume Support
-- Better NLP-based skill extraction
-- ATS-style scoring system
-- Interactive analytics dashboard
-- AI-generated candidate summaries
+Upload one or multiple resumes in PDF format and paste the desired job description.
+
+![Upload](screenshots/upload.png)
 
 ---
 
-# 👨‍💻 Author
+### 🏆 Candidate Ranking
+
+Candidates are ranked according to their cosine similarity score with the job description.
+
+![Ranking](screenshots/ranking.png)
+
+---
+
+### 🧠 Extracted Skills
+
+The application automatically extracts technical skills from resumes.
+
+![Skills](screenshots/skills.png)
+
+---
+
+### ✅ Skill Match Analysis
+
+Displays:
+
+- Detected Skills
+- Required Skills
+- Matched Skills
+- Missing Skills
+
+![Skill Match](screenshots/skills1.png)
+
+---
+
+## 📊 Workflow
+
+1. Upload Resume(s)
+2. Paste Job Description
+3. Extract Text from PDFs
+4. Clean and Preprocess Text
+5. Extract Technical Skills
+6. Convert Text into TF-IDF Vectors
+7. Compute Cosine Similarity
+8. Rank Candidates
+9. Display Matched & Missing Skills
+
+---
+
+## 📈 Dataset
+
+### Resume Dataset
+- Resume.csv
+
+### Job Description Dataset
+- monster_com-job_sample.csv
+
+---
+
+## 📚 Machine Learning Concepts Used
+
+- Natural Language Processing (NLP)
+- TF-IDF Vectorization
+- Cosine Similarity
+- Text Cleaning
+- Tokenization
+- Stopword Removal
+- Lemmatization
+- Skill Extraction using Keyword Matching
+
+---
+
+## 🎯 Future Improvements
+
+- BERT/Sentence Transformers for semantic matching
+- Skill weightage
+- ATS Resume Score
+- Experience matching
+- Education matching
+- Recruiter Dashboard
+- Resume Recommendation System
+
+---
+
+## 👨‍💻 Author
 
 **Saksham Verma**
 
-- GitHub: https://github.com/saktronX
-- LinkedIn: *(Add your LinkedIn profile URL here)*
+GitHub: https://github.com/saktronX
+
+LinkedIn: https://www.linkedin.com/in/saksham-verma-649922277/
 
 ---
 
-# 📜 License
+## ⭐ Acknowledgements
 
-This project was developed as part of the **Future Interns Machine Learning Internship – Task 3** and is intended for educational and portfolio purposes.
+This project was developed as part of the **Future Interns Machine Learning Internship (Task 3)** to demonstrate resume screening, NLP preprocessing, candidate ranking, and skill matching using Python and Streamlit.
